@@ -6,44 +6,28 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class MyStepdefs {
-    @Given("I have {int} beer cans")
-    public void i_have_beer_cans(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-     //   throw new cucumber.api.PendingException();
-        ChromeOptions chromeOptions = new ChromeOptions();
-        //I think this function was deprecated. TODO: Check with Altaf to see what we can replace it with
-        //chromeOptions.setHeadless(true);
-
-        // Adding first comment
+    @Given("I am on the Youtube home page youtube.com")
+    public void ytHomePage() {
 
     }
 
-    @Given("I have drunk {int} beer cans")
-    public void i_have_drunk_beer_cans(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new cucumber.api.PendingException();
+    @When("I search for \"Cucumber Tests\"")
+    public void searchVideo() {
+
     }
 
-    @When("I go to my fridge")
-    public void i_go_to_my_fridge() {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new cucumber.api.PendingException();
+    @Then("I should find a link for \"Introduction to Cucumber\"")
+    public void findVideoLink() {
+
     }
 
-    @Then("I should have {int} beer cans")
-    public void i_should_have_beer_cans(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-    //    throw new cucumber.api.PendingException();
+    @When("I click on the link for the video")
+    public void clickVideoLink(){
+
     }
 
-/*
-     My change to run a pipeline
-    change on 090122
-     Second againgit add .
+    @Then("I should see brought to the video page where it shows the date posted as May 14, 2017")
+    public void confirmVideoDate() {
 
-     Last Change 03/13/2023
-
- */
-
-
+    }
 }
