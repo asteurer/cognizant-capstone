@@ -88,6 +88,6 @@ public class YouTubeVideoPage extends BasePage{
     }
 
     public void clickSettingsButton() {
-        driver.findElement(settingsSettingsOptionLocator).click();
+        waitForElement(settingsSettingsOptionLocator).click();
     }
 }

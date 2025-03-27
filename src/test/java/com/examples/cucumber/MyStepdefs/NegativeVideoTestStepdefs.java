@@ -120,6 +120,8 @@ public class NegativeVideoTestStepdefs {
 
         logger.info("Verify that pop-up has the correct text");
         Assert.assertEquals("Sign in to subscribe to this channel.", videoPage.getSubscriptionPopUpText());
+
+        teardown();
     }
 
     @When("I open the settings menu")
@@ -143,6 +145,10 @@ public class NegativeVideoTestStepdefs {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
 
         logger.info("Verifying that we are taken to the sign-in page");
-        //TODO
+        //TODO: We may want a wait of some sort in here.
+        boolean isRightPage = videoPage.getCurrentUrl().startsWith("https://accounts.google.com/v3/signin");
+        Assert.assertTrue(isRightPage);
+
+        teardown();
     }
 }
