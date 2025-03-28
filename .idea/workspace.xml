@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/features/YouTube.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/YouTube.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeHomePage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeSearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeSearchResultsPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/MyStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,5 +87,15 @@
       <updated>1742831857280</updated>
     </task>
     <servers />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
