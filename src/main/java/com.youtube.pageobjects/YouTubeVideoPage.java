@@ -2,6 +2,7 @@ package com.youtube.pageobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 public class YouTubeVideoPage extends BasePage{
@@ -13,8 +14,6 @@ public class YouTubeVideoPage extends BasePage{
     private By shareButtonLocator = By.xpath("//*[@id='top-level-buttons-computed']/yt-button-view-model/button-view-model/button/yt-touch-feedback-shape/div/div[2]");
     //Locator for description dropdown
     private By descriptionDropDownLocator = By.xpath("//*[@id='expand']");
-    //Locator for date once dropdown is executed
-    private By datePostedLocator = By.xpath("//*[@id='info']/span[3]");
     //Locator for sign-in button
     private By loginButtonLocator = By.xpath("//span[text()='Sign in']/../../..");
     //Locator for logged out menu
@@ -38,13 +37,26 @@ public class YouTubeVideoPage extends BasePage{
         super.visit("https://www.youtube.com/watch?v=lC0jzd8sGIA");
     }
 
-    public String getVidDate() {
+    /**
+     * Dismisses the youtube premium ad, if present
+     */
+    public void dismissPremiumAd(WebDriver driver) {
+        By dismissButtonLocator = By.xpath("//button[@aria-label='Dismiss']");
+        try {
+            driver.findElement(dismissButtonLocator).click();
+        } catch (Exception e) {
+            // If the youtube premium ad doesn't show, do nothing
+        }
+    }
+
+    public String getVidDate(WebDriver driver) {
+        By datePostedLocator = By.xpath("//ytd-watch-info-text[@id='ytd-watch-info-text']");
         return driver.findElement(datePostedLocator).getText();
-        //needs YouTube dropdown functionality to get exact date
     }
 
     public void clickExpandButton(WebDriver driver) {
-        driver.findElement(descriptionDropDownLocator).click();
+        WebElement expandButton = driver.findElement(By.xpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[2]/ytd-watch-metadata/div/div[4]/div[1]/div/ytd-text-inline-expander/div[1]/tp-yt-paper-button"));
+        expandButton.click();
     }
 
     //NOTE: WAIT NEEDED AFTER CLICKING SHARE

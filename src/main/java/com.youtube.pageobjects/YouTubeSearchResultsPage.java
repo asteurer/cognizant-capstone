@@ -5,6 +5,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.logging.Logger;
+
 public class YouTubeSearchResultsPage extends BasePage {
 
     //TODO: Test search bar locator to ensure this won't return several items
@@ -51,9 +53,12 @@ public class YouTubeSearchResultsPage extends BasePage {
      * @param fullTitle
      * @return
      */
-
     public WebElement findVideoLink(String fullTitle) {
-        String xpath = String.format("//a[@id='video-title' and @class='yt-simple-endpoint style-scope ytd-video-renderer' and @aria-label='%s']", fullTitle);
+        String xpath = String.format(
+                "//a[@id='video-title' and @class='yt-simple-endpoint style-scope ytd-video-renderer' and contains(@aria-label, '%s')]",
+                fullTitle
+        );
+
         By titleXpath = By.xpath(xpath);
         return super.waitForElement(titleXpath);
     }
