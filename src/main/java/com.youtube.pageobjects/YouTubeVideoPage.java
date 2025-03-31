@@ -1,20 +1,21 @@
 package com.youtube.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class YouTubeVideoPage extends BasePage{
     //Locator for 'Newest First' Drop Down Button
-    private By commentNewestFirstButtonLocator = By.xpath("//*[@id='item-with-badge']/div");
+    private By commentNewestFirstButtonLocator = By.xpath("//*[@id='menu']/a[2]");
     //Locator for Comment Section Drop Down
-    private By commentSectionDropDownLocator = By.xpath("//*[@id='label']");
+    private By commentSectionDropDownLocator = By.xpath("//*[@id='sort-menu']/yt-sort-filter-sub-menu-renderer/yt-dropdown-menu/tp-yt-paper-menu-button");
     //Locator for Share Button close
     private By shareButtonCloseLocator = By.xpath("//*[@id='close-panel-icon']/span/div");
-    //Locator for embed text
-    private By embedTextLocator = By.xpath("//*[@id='mirror']");
     //Locator for embed button
     private By embedButtonLocator = By.xpath("//*[@id='target']/yt-icon/span/div");
     //Locator for share button
@@ -66,11 +67,19 @@ public class YouTubeVideoPage extends BasePage{
         driver.findElement(embedButtonLocator).click();
     }
 
-    public void commentSectionHandler(WebDriver driver) throws InterruptedException {
-        new Actions(driver).scrollToElement(driver.findElement(By.linkText("Sort by"))).perform();
-        Thread.sleep(5000);
+    public void commentSectionHandler(WebDriver driver) {
+        WebElement dropDown = driver.findElement(By.id("snippet"));
+        JavascriptExecutor jse = (JavascriptExecutor)driver;
+        jse.executeScript("arguments[0].scrollIntoView(true)", dropDown);
 //        Select dropdown = new Select(driver.findElement(commentSectionDropDownLocator));
 //        dropdown.selectByVisibleText("Newest First");
+    }
+    public void clickSortBy(WebDriver driver)  throws InterruptedException {
+        driver.findElement(commentSectionDropDownLocator).click();
+        Thread.sleep(2000);
+    }
+    public void clickByNewest(WebDriver driver) {
+        driver.findElement(commentNewestFirstButtonLocator).click();
     }
 
     public void exitShare(WebDriver driver) {
@@ -79,7 +88,8 @@ public class YouTubeVideoPage extends BasePage{
 
     public String getEmbedText(WebDriver driver) throws InterruptedException {
         Thread.sleep(2000);
-        return driver.findElement(embedTextLocator).getText();
+        WebElement embedText = driver.findElement(By.xpath("//div[@id='mirror']"));
+        return embedText.getDomProperty("textContent");
     }
 
     public boolean isSignInButtonVisible() {
