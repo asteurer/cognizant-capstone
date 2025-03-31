@@ -40,8 +40,8 @@ public class YouTubeStepDefs {
     @When("I search for 'Cucumber Tests'")
     public void searchVideo() {
         try {
-            searchResultsPage = new YouTubeSearchResultsPage(driver);
-            searchResultsPage = searchResultsPage.search("Cucumber Tests");
+            YouTubeSearchResultsPage sp = new YouTubeSearchResultsPage(driver);
+            searchResultsPage = sp.search("Cucumber Tests");
         } catch (Exception e) {
             log.warning("failed to search for video");
             throw e;
@@ -54,11 +54,11 @@ public class YouTubeStepDefs {
     public void findVideoLink() {
         try {
             videoLink = searchResultsPage.findVideoLink("Introduction to Cucumber by The-Ohayo-Dev");
-            videoPage = searchResultsPage.clickLink(videoLink); // TODO: This works here, but the same line in clickVideoLink throws a null pointer exception.
-            videoPage.dismissPremiumAd(driver);
-            videoPage.clickExpandButton(driver);
-            log.info("DATE: " + videoPage.getVidDate(driver));
             Assert.assertEquals("Introduction to Cucumber", videoLink.getText());
+            // TODO: The three lines below work here, but the same lines in clickVideoLink throws a null pointer exception
+//            videoPage = searchResultsPage.clickLink(videoLink);
+//            videoPage.clickExpandButton();
+//            Assert.assertEquals("May 14, 2017", videoPage.getVidDate());
         } catch (Exception e) {
             log.warning("failed to find video link");
             throw e;
@@ -70,8 +70,7 @@ public class YouTubeStepDefs {
     @When("I click on the link for the video")
     public void clickVideoLink(){
         try {
-
-//            videoPage = searchResultsPage.clickLink(videoLink);
+            videoPage = searchResultsPage.clickLink(videoLink); // TODO: HERE
             log.info("successfully clicked link");
         } catch (Exception e) {
             log.warning("failed to click video link");
@@ -84,9 +83,13 @@ public class YouTubeStepDefs {
     @Then("I should see brought to the video page where it shows the date posted as May 14, 2017")
     public void confirmVideoDate() {
         try {
-            log.info("FIX THIS");
+            videoPage.clickExpandButton(); // TODO: HERE
+            Assert.assertEquals("May 14, 2017", videoPage.getVidDate()); // TODO: HERE
         } catch (Exception e) {
+            log.warning("failed to confirm the upload date");
             throw e;
         }
+
+        log.info("successfully confirmed the video upload date");
     }
 }

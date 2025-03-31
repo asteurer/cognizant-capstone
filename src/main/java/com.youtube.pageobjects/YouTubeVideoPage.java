@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
+import java.util.Arrays;
+
 public class YouTubeVideoPage extends BasePage{
     //Locator for embed text
     private By embedTextLocator = By.xpath("//*[@id='textarea']");
@@ -37,25 +39,16 @@ public class YouTubeVideoPage extends BasePage{
         super.visit("https://www.youtube.com/watch?v=lC0jzd8sGIA");
     }
 
-    /**
-     * Dismisses the youtube premium ad, if present
-     */
-    public void dismissPremiumAd(WebDriver driver) {
-        By dismissButtonLocator = By.xpath("//button[@aria-label='Dismiss']");
-        try {
-            driver.findElement(dismissButtonLocator).click();
-        } catch (Exception e) {
-            // If the youtube premium ad doesn't show, do nothing
-        }
+    public String getVidDate() {
+        WebElement date = super.waitForElement(By.xpath("//ytd-watch-info-text[@id='ytd-watch-info-text']"));
+
+        // Parse out the upload date
+        String[] arr = date.getText().split(" ");
+        return String.join(" ", Arrays.copyOfRange(arr, arr.length - 3, arr.length));
     }
 
-    public String getVidDate(WebDriver driver) {
-        By datePostedLocator = By.xpath("//ytd-watch-info-text[@id='ytd-watch-info-text']");
-        return driver.findElement(datePostedLocator).getText();
-    }
-
-    public void clickExpandButton(WebDriver driver) {
-        WebElement expandButton = driver.findElement(By.xpath("/html/body/ytd-app/div[1]/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/div[2]/ytd-watch-metadata/div/div[4]/div[1]/div/ytd-text-inline-expander/div[1]/tp-yt-paper-button"));
+    public void clickExpandButton() {
+        WebElement expandButton = super.waitForElement(By.xpath("(//ytd-text-inline-expander)[2]"));
         expandButton.click();
     }
 
