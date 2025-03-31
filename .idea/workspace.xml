@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/features/YouTube.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/MyStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/MyStepdefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/RunCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/RunCucumberTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/MyBeerCans.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +18,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -37,18 +45,63 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2uln6jtKejfoI3FxVTEKrKgyxNu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.RunCucumberTest.testVideoPage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "TestNG.RunCucumberTest.testVideoPage.executor": "Run",
+    "git-widget-placeholder": "Carson",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
+  <component name="RunManager" selected="TestNG.RunCucumberTest.testVideoPage">
+    <configuration name="RunCucumberTest.testVideoPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="cognizant-capstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.examples.cucumber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.examples.cucumber" />
+      <option name="MAIN_CLASS_NAME" value="com.examples.cucumber.RunCucumberTest" />
+      <option name="METHOD_NAME" value="testVideoPage" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RunCucumberTest.testVideoPage" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="cognizant-capstone" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.examples.cucumber.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.examples.cucumber" />
+      <option name="MAIN_CLASS_NAME" value="com.examples.cucumber.RunCucumberTest" />
+      <option name="METHOD_NAME" value="testVideoPage" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.RunCucumberTest.testVideoPage" />
+        <item itemvalue="JUnit.RunCucumberTest.testVideoPage" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

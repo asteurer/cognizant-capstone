@@ -3,23 +3,23 @@ package com.examples.cucumber;
 import com.youtube.pageobjects.YouTubeVideoPage;
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
+import org.junit.Assert;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.Assert;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.annotations.*;
+
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-@RunWith(Cucumber.class)
-@CucumberOptions(
-        features = {"classpath:features/MyBeerCans.feature"},
-        glue = {"com.examples.cucumber"})
 public class RunCucumberTest {
+
     private WebDriver driver;
     private Logger logger;
+
     @BeforeMethod(alwaysRun = true)
     @Parameters("browser")
     public void setUp(@Optional("chrome") String browser) {
@@ -39,12 +39,36 @@ public class RunCucumberTest {
                 break;
         }
     }
-
+    @Test
+    public void testVideoPage() throws InterruptedException {
+        logger.info("Starting Video Page Functionality");
+        YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
+        videoPage.visit();
+        driver.manage().window().maximize();
+        Thread.sleep(5000);
+        logger.info("Checking Page");
+        Assert.assertEquals(videoPage.getCurrentUrl(), "https://www.youtube.com/watch?v=lC0jzd8sGIA");
+        logger.info("Clicking Share");
+        videoPage.clickShare(driver);
+        logger.info("Clicking Embed");
+        videoPage.clickEmbed(driver);
+        logger.info("Comparing Embed Video Code");
+        System.out.println(videoPage.getEmbedText(driver));
+        Assert.assertEquals(videoPage.getEmbedText(driver), "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lC0jzd8sGIA?si=lAZ57pi1NmisWylG\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>");
+        logger.info("Closing Share Popup");
+        videoPage.exitShare(driver);
+        Thread.sleep(5000);
+        logger.info("Sorting Comments by Newest First");
+        //TODO: Sort comment function and locate the newest comment
+        videoPage.commentSectionHandler(driver);
+        Thread.sleep(4000);
+    }
     @AfterMethod(alwaysRun = true)
     public void tearDown(){
         driver.quit();
         logger.info("Browser is closed");
     }
+
 
 
 }
