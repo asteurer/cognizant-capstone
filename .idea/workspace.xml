@@ -6,9 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeSearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeSearchResultsPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,15 +42,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cucumber Java.Feature: YouTube.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "andrew",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cucumber Java.Feature: YouTube.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;andrew&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Feature: YouTube" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
