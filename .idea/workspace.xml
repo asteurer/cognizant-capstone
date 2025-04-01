@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/features/YouTube.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/YouTube.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

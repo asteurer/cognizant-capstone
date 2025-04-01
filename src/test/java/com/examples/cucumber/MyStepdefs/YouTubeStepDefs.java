@@ -55,10 +55,6 @@ public class YouTubeStepDefs {
         try {
             videoLink = searchResultsPage.findVideoLink("Introduction to Cucumber by The-Ohayo-Dev");
             Assert.assertEquals("Introduction to Cucumber", videoLink.getText());
-            // TODO: The three lines below work here, but the same lines in clickVideoLink throws a null pointer exception
-//            videoPage = searchResultsPage.clickLink(videoLink);
-//            videoPage.clickExpandButton();
-//            Assert.assertEquals("May 14, 2017", videoPage.getVidDate());
         } catch (Exception e) {
             log.warning("failed to find video link");
             throw e;
@@ -70,7 +66,7 @@ public class YouTubeStepDefs {
     @When("I click on the link for the video")
     public void clickVideoLink(){
         try {
-            videoPage = searchResultsPage.clickLink(videoLink); // TODO: HERE
+            videoPage = searchResultsPage.clickLink(videoLink);
             log.info("successfully clicked link");
         } catch (Exception e) {
             log.warning("failed to click video link");
@@ -83,8 +79,8 @@ public class YouTubeStepDefs {
     @Then("I should see brought to the video page where it shows the date posted as May 14, 2017")
     public void confirmVideoDate() {
         try {
-            videoPage.clickExpandButton(); // TODO: HERE
-            Assert.assertEquals("May 14, 2017", videoPage.getVidDate()); // TODO: HERE
+            videoPage.clickExpandButton();
+            Assert.assertEquals("May 14, 2017", videoPage.getVidDate());
         } catch (Exception e) {
             log.warning("failed to confirm the upload date");
             throw e;
