@@ -1,6 +1,7 @@
 package com.youtube.pageobjects;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 
@@ -57,7 +58,30 @@ public class YouTubeVideoPage extends BasePage{
     }
 
     public boolean isSignInButtonVisible() {
-        return waitForElement(loginButtonLocator).isDisplayed();
+        try {
+            //If the element is present, return true
+            waitForElement(loginButtonLocator).isDisplayed();
+            return true;
+        } catch(TimeoutException e) {
+            //If the element is not present and we timed out, return false
+            return false;
+        }
+    }
+
+    public boolean isAccountMenuVisible() {
+        try {
+            //If the element is present, return true
+            waitForElement(loggedInSettingsMenuLocator).isDisplayed();
+            return true;
+        } catch(TimeoutException e) {
+            //If the element is not present and we timed out, return false
+            return false;
+        }
+    }
+
+    public void clickSignInButton() {
+        waitForElement(loginButtonLocator).isDisplayed();
+        driver.findElement(loginButtonLocator).click();
     }
 
     /**

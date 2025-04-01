@@ -1,31 +1,20 @@
 package com.examples.cucumber.MyStepdefs;
 
 import com.youtube.pageobjects.YouTubeVideoPage;
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Optional;
-import org.testng.annotations.Parameters;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
-public class NegativeVideoTestStepdefs {
-
-    private WebDriver driver;
-    private Logger logger;
+public class NegativeVideoTestStepdefs extends CoreStepdefs {
 
     /**
      * Setup function for our browser and logger. Note that depending on the setup of our Cucumber tests, it may be
      * easiest to use this without annotations.
      *
      * @param browser
-     */
+     *
     @BeforeClass(alwaysRun = true)
     @Parameters("browser")
     public void setup(@Optional("chrome") String browser) {
@@ -33,50 +22,33 @@ public class NegativeVideoTestStepdefs {
         logger = Logger.getLogger(YouTubeVideoPage.class.getName());
         logger.setLevel(Level.INFO);
 
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
+
         switch (browser.toLowerCase()) {
             case "chrome":
                 logger.info("Testing with " + browser + " browser");
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(chromeOptions);
                 break;
             default:
                 logger.warning("Configuration missing for browser \"" + browser + "\", defaulting to Chrome.");
                 driver = new ChromeDriver();
                 break;
         }
-    }
+    }/
 
     /**
      * Teardown function for our browser.
      */
-    @AfterClass(alwaysRun = true)
+    @After
     public void teardown() {
         driver.quit();
         logger.info("Closed browser");
     }
 
-    /**
-     * Negative tests
-     * <p>
-     * Test 1: Subscribing while signed out
-     * <p>
-     * Given I am on a YouTube video page in the Firefox browser
-     * And I am not signed in
-     * When I click the subscribe button
-     * Then I should see a sign-in subscription pop-up
-     * <p>
-     * Test 2: Opening settings menu while signed out
-     * <p>
-     * Given I am on a YouTube video page in the Firefox browser
-     * And I am not signed in
-     * When I open the settings menu and click the Settings button
-     * Then I should be taken to the Google sign-in page
-     * <p>
-     * Test 3: Saving while signed out??
-     */
-
     @Given("I am on a YouTube video page in the {word} browser")
     public void on_youtube_video_page(String browser) {
-        setup(browser);
+        super.setUp(browser);
 
         logger.info("Opening page");
         driver.get("https://www.youtube.com/watch?v=P7gt3g7iq7M");
@@ -84,13 +56,12 @@ public class NegativeVideoTestStepdefs {
 
     /**
      * This step ensures that we are not signed in; if we are, sign out.
-     *
-     * TODO: Was unable to test sign-out functionality since Google will not let me sign in with automation software running.
      */
     @Given("I am not signed in")
     public void not_signed_in() {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
 
+        //TODO: This section is flawed; will make us wait 10 sec each time if we are signed in
         logger.info("Ensure that Sign In button is visible in top right");
         if(!videoPage.isSignInButtonVisible()) {
             logger.info("Sign In button is not visible; logging out");
