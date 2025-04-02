@@ -1,0 +1,8 @@
+#IDE files
+.idea/
+
+#Compiled files
+target/
+
+#Report files
+*.html

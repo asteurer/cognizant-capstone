@@ -1,4 +1,4 @@
-package com.examples.cucumber.MyStepdefs;
+package com.examples.cucumber.stepdefs;
 
 import com.youtube.pageobjects.YouTubeLoginPage;
 import com.youtube.pageobjects.YouTubeVideoPage;

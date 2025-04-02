@@ -5,8 +5,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import java.util.logging.Logger;
-
 public class YouTubeSearchResultsPage extends BasePage {
 
     //TODO: Test search bar locator to ensure this won't return several items

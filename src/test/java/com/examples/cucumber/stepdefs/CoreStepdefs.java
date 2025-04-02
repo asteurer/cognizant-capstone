@@ -1,13 +1,10 @@
-package com.examples.cucumber.MyStepdefs;
+package com.examples.cucumber.stepdefs;
 
 import com.examples.cucumber.RunCucumberTest;
-import io.cucumber.java.After;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
@@ -25,7 +22,6 @@ public class CoreStepdefs {
      *
      * @param browser
      */
-    @BeforeMethod(alwaysRun = true)
     @Parameters("browser")
     public void setUp(@Optional("chrome") String browser) {
         logger = Logger.getLogger(RunCucumberTest.class.getName());

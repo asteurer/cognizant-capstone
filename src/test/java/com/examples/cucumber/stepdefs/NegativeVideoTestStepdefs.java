@@ -1,7 +1,6 @@
-package com.examples.cucumber.MyStepdefs;
+package com.examples.cucumber.stepdefs;
 
 import com.youtube.pageobjects.YouTubeVideoPage;
-import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -35,16 +34,7 @@ public class NegativeVideoTestStepdefs extends CoreStepdefs {
                 driver = new ChromeDriver();
                 break;
         }
-    }/
-
-    /**
-     * Teardown function for our browser.
-     */
-    @After
-    public void teardown() {
-        driver.quit();
-        logger.info("Closed browser");
-    }
+    }*/
 
     @Given("I am on a YouTube video page in the {word} browser")
     public void on_youtube_video_page(String browser) {
@@ -91,8 +81,6 @@ public class NegativeVideoTestStepdefs extends CoreStepdefs {
 
         logger.info("Verify that pop-up has the correct text");
         Assert.assertEquals("Sign in to subscribe to this channel.", videoPage.getSubscriptionPopUpText());
-
-        teardown();
     }
 
     @When("I open the settings menu")
@@ -112,14 +100,12 @@ public class NegativeVideoTestStepdefs extends CoreStepdefs {
     }
 
     @Then("I should be taken to the Google sign-in page")
-    public void verify_google_sign_in_page() {
+    public void verify_google_sign_in_page() throws InterruptedException {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
 
         logger.info("Verifying that we are taken to the sign-in page");
-        //TODO: We may want a wait of some sort in here.
+        Thread.sleep(2000);
         boolean isRightPage = videoPage.getCurrentUrl().startsWith("https://accounts.google.com/v3/signin");
         Assert.assertTrue(isRightPage);
-
-        teardown();
     }
 }
