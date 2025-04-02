@@ -3,15 +3,13 @@ package com.youtube.pageobjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+import java.util.logging.Logger;
 
 public class YouTubeSearchResultsPage extends BasePage {
 
     //TODO: Test search bar locator to ensure this won't return several items
-    private By searchBarLocator = By.name("search_query");
-    private By searchButtonLocator = By.xpath("//button[@title='Search' and @class='ytSearchboxComponentSearchButton']");
-
-    private String searchResultByTitleContainsXpathString = "//yt-formatted-string[@class='style-scope ytd-video-renderer' and contains(.,'')]";
-    private String searchResultByFullTitleXpathString = "//yt-formatted-string[@class='style-scope ytd-video-renderer' and text()='";
 
     public YouTubeSearchResultsPage(WebDriver driver) {
         super(driver);
@@ -23,10 +21,12 @@ public class YouTubeSearchResultsPage extends BasePage {
      * @param toSearch
      */
     public YouTubeSearchResultsPage search(String toSearch) {
+        WebElement searchBar = super.waitForElement(By.name("search_query"));
+        WebElement searchButton = super.waitForElement(By.xpath("//button[@title='Search' and @class='ytSearchboxComponentSearchButton ytSearchboxComponentSearchButtonDark']"));
         //Type our string into search bar
-        driver.findElement(searchBarLocator).sendKeys(toSearch);
+        searchBar.sendKeys(toSearch);
         //Click search button
-        driver.findElement(searchButtonLocator).click();
+        searchButton.click();
 
         return new YouTubeSearchResultsPage(driver);
     }
@@ -35,16 +35,31 @@ public class YouTubeSearchResultsPage extends BasePage {
      * Clicks on a video with the full title as listed below. Throws a NoSuchElementException when no matching video is
      * found.
      *
-     * @param fullTitle
+     * @param link
      * @return YouTubeVideoPage
      * @throws NoSuchElementException
      */
-    public YouTubeVideoPage clickVideoByFullTitle(String fullTitle) throws NoSuchElementException {
-        //Click the video listed by fullTitle
-        driver.findElement(By.xpath(searchResultByFullTitleXpathString + fullTitle + "')]")).click();
+    public YouTubeVideoPage clickLink(WebElement link) {
+        link.click();
 
         //TODO: Test the exception throwing of this class
 
         return new YouTubeVideoPage(driver);
+    }
+
+    /**
+     * Finds the video link on the page based on the full title
+     *
+     * @param fullTitle
+     * @return
+     */
+    public WebElement findVideoLink(String fullTitle) {
+        String xpath = String.format(
+                "//a[@id='video-title' and @class='yt-simple-endpoint style-scope ytd-video-renderer' and contains(@aria-label, '%s')]",
+                fullTitle
+        );
+
+        By titleXpath = By.xpath(xpath);
+        return super.waitForElement(titleXpath);
     }
 }
