@@ -5,9 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeLoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/CoreStepdefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/LoginStepdefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/features/LoginTests.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/features/MyBeerCans.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/features/YouTube.feature" beforeDir="false" afterPath="$PROJECT_DIR$/features/YouTube.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/YouTubeStepDefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeHomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeHomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeSearchResultsPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeSearchResultsPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/MyStepdefs.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/NegativeVideoTestStepdefs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/MyStepdefs/NegativeVideoTestStepdefs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeHomePage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeHomePage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeSearchResultsPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeSearchResultsPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeVideoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeVideoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/RunCucumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/RunCucumberTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +52,7 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2uln6jtKejfoI3FxVTEKrKgyxNu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -46,7 +62,7 @@
     &quot;Cucumber Java.Feature: YouTube.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;andrew&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#3 on Merging Carson&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;
   }
 }</component>
