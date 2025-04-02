@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="Created Carson Branch with current code">
+    <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_12_07_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_12_07_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_1_37_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_1_37_PM__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com.youtube.pageobjects/YouTubeVideoPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/RunCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/RunCucumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeVideoPage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/youtube/pageobjects/YouTubeVideoPage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/RunCucumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/RunCucumberTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -118,11 +121,20 @@
       <option name="project" value="LOCAL" />
       <updated>1743437861534</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging.">
+      <option name="closed" value="true" />
+      <created>1743453775057</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1743453775057</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created Carson Branch with current code" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created Carson Branch with current code" />
+    <MESSAGE value="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging." />
   </component>
 </project>
