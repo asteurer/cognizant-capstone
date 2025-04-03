@@ -17,7 +17,7 @@ public class YouTubeSearchResultsPage extends BasePage {
      */
     public YouTubeSearchResultsPage search(String toSearch) {
         WebElement searchBar = super.waitForElement(By.name("search_query"));
-        WebElement searchButton = super.waitForElement(By.xpath("//button[@title='Search' and @class='ytSearchboxComponentSearchButton ytSearchboxComponentSearchButtonDark']"));
+        WebElement searchButton = super.waitForElement(By.xpath("//button[@title='Search' and contains(@class, 'ytSearchboxComponentSearchButton')]"));
         //Type our string into search bar
         searchBar.sendKeys(toSearch);
         //Click search button
