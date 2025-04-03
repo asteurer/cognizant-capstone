@@ -9,32 +9,12 @@ import org.openqa.selenium.WebElement;
 import java.util.Arrays;
 
 public class YouTubeVideoPage extends BasePage{
-    //Locator for 'Newest First' Drop Down Button
-    private By commentNewestFirstButtonLocator = By.xpath("//*[@id='menu']/a[2]");
-    //Locator for Comment Section Drop Down
-    private By commentSectionDropDownLocator = By.xpath("//*[@id='sort-menu']/yt-sort-filter-sub-menu-renderer/yt-dropdown-menu/tp-yt-paper-menu-button");
-    //Locator for Share Button close
-    private By shareButtonCloseLocator = By.xpath("//*[@id='close-panel-icon']/span/div");
-    //Locator for embed button
-    private By embedButtonLocator = By.xpath("//*[@id='target']/yt-icon/span/div");
-    //Locator for share button
-    private By shareButtonLocator = By.xpath("//*[@id='top-level-buttons-computed']/yt-button-view-model/button-view-model/button/yt-touch-feedback-shape/div/div[2]");
-    //Locator for description dropdown
-    private By descriptionDropDownLocator = By.xpath("//*[@id='expand']");
     //Locator for sign-in button
-    private By loginButtonLocator = By.xpath("//span[text()='Sign in']/../../..");
-    //Locator for logged out menu
-    private By loggedOutSettingsMenuLocator = By.xpath("//yt-icon[@class='style-scope ytd-topbar-menu-button-renderer']");
+    private final By loginButtonLocator = By.xpath("//span[text()='Sign in']/../../..");
     //Locator for account menu
-    private By loggedInSettingsMenuLocator = By.xpath("//button[@aria-label='Account menu']");
-    //Locator for sign out button
-    private By signOutSettingsOptionLocator = By.xpath("//yt-formatted-string[text()='Sign out']");
-    //Locator for settings button
-    private By settingsSettingsOptionLocator = By.xpath("//yt-formatted-string[text()='Settings']");
-    //Locator for subscribe button
-    private By subscribeButtonLocator = By.xpath("//*[@id='subscribe-button-shape']/button");
+    private final By loggedInSettingsMenuLocator = By.xpath("//button[@aria-label='Account menu']");
     //Locator for subscribe pop up when not signed in
-    private By subscribePopUpTextLocator = By.xpath("//yt-formatted-string[text()='Sign in to subscribe to this channel.']");
+    private final By subscribePopUpTextLocator = By.xpath("//yt-formatted-string[text()='Sign in to subscribe to this channel.']");
 
     public YouTubeVideoPage(WebDriver driver) {
         super(driver);
@@ -44,6 +24,11 @@ public class YouTubeVideoPage extends BasePage{
         super.visit("https://www.youtube.com/watch?v=lC0jzd8sGIA");
     }
 
+    /**
+     * Retrieves the upload date of the YouTube video
+     *
+     * @return String
+     */
     public String getVidDate() {
         WebElement date = super.waitForElement(By.xpath("//ytd-watch-info-text[@id='ytd-watch-info-text']"));
 
@@ -52,19 +37,26 @@ public class YouTubeVideoPage extends BasePage{
         return String.join(" ", Arrays.copyOfRange(arr, arr.length - 3, arr.length));
     }
 
+    /**
+     * Expands the description section under the YouTube video
+     */
     public void clickExpandButton() {
-        WebElement expandButton = super.waitForElement(By.xpath("(//ytd-text-inline-expander)[2]"));
+        WebElement expandButton = super.waitForElement(By.xpath("//ytd-text-inline-expander[@id='description-inline-expander']"));
         expandButton.click();
     }
 
     //NOTE: WAIT NEEDED AFTER CLICKING SHARE
     public void clickShare(WebDriver driver) throws InterruptedException {
         Thread.sleep(2000);
+        //Locator for share button
+        By shareButtonLocator = By.xpath("//*[@id='top-level-buttons-computed']/yt-button-view-model/button-view-model/button/yt-touch-feedback-shape/div/div[2]");
         driver.findElement(shareButtonLocator).click();
     }
 
     public void clickEmbed(WebDriver driver) throws InterruptedException {
         Thread.sleep(2000);
+        //Locator for embed button
+        By embedButtonLocator = By.xpath("//*[@id='target']/yt-icon/span/div");
         driver.findElement(embedButtonLocator).click();
     }
 
@@ -76,14 +68,20 @@ public class YouTubeVideoPage extends BasePage{
 //        dropdown.selectByVisibleText("Newest First");
     }
     public void clickSortBy(WebDriver driver)  throws InterruptedException {
+        //Locator for Comment Section Drop Down
+        By commentSectionDropDownLocator = By.xpath("//*[@id='sort-menu']/yt-sort-filter-sub-menu-renderer/yt-dropdown-menu/tp-yt-paper-menu-button");
         driver.findElement(commentSectionDropDownLocator).click();
         Thread.sleep(2000);
     }
     public void clickByNewest(WebDriver driver) {
+        //Locator for 'Newest First' Drop Down Button
+        By commentNewestFirstButtonLocator = By.xpath("//*[@id='menu']/a[2]");
         driver.findElement(commentNewestFirstButtonLocator).click();
     }
 
     public void exitShare(WebDriver driver) {
+        //Locator for Share Button close
+        By shareButtonCloseLocator = By.xpath("//*[@id='close-panel-icon']/span/div");
         driver.findElement(shareButtonCloseLocator).click();
     }
 
@@ -125,6 +123,8 @@ public class YouTubeVideoPage extends BasePage{
      */
     public void clickSettingsMenu() {
         if(driver.findElement(loginButtonLocator).isDisplayed()) {
+            //Locator for logged out menu
+            By loggedOutSettingsMenuLocator = By.xpath("//yt-icon[@class='style-scope ytd-topbar-menu-button-renderer']");
             driver.findElement(loggedOutSettingsMenuLocator).click();
         } else {
             driver.findElement(loggedInSettingsMenuLocator).click();
@@ -132,10 +132,14 @@ public class YouTubeVideoPage extends BasePage{
     }
 
     public void clickSignOut() {
+        //Locator for sign out button
+        By signOutSettingsOptionLocator = By.xpath("//yt-formatted-string[text()='Sign out']");
         driver.findElement(signOutSettingsOptionLocator).click();
     }
 
     public void clickSubscribeButton() {
+        //Locator for subscribe button
+        By subscribeButtonLocator = By.xpath("//*[@id='subscribe-button-shape']/button");
         driver.findElement(subscribeButtonLocator).click();
     }
 
@@ -148,6 +152,8 @@ public class YouTubeVideoPage extends BasePage{
     }
 
     public void clickSettingsButton() {
+        //Locator for settings button
+        By settingsSettingsOptionLocator = By.xpath("//yt-formatted-string[text()='Settings']");
         waitForElement(settingsSettingsOptionLocator).click();
     }
 }

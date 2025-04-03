@@ -6,16 +6,21 @@ import org.openqa.selenium.WebDriver;
 
 public class YouTubeLoginPage extends BasePage {
 
-    private By emailInput = By.xpath("//input[@type='email']");
-    private By nextButton = By.xpath("//span[text()='Next']");
-    private By passwordInput = By.xpath("//input[@type='password']");
-    private By incorrectPasswordLabel = By.xpath("//span[text()='Wrong password. Try again or click Forgot password to reset it.']");
 
     public YouTubeLoginPage(WebDriver driver) {
         super(driver);
     }
 
+    /**
+     * Logs in to a Google account
+     * @param username The username to use to log in
+     * @param password The password to use to log in
+     */
     public void login(String username, String password) {
+        By emailInput = By.xpath("//input[@type='email']");
+        By nextButton = By.xpath("//span[text()='Next']");
+        By passwordInput = By.xpath("//input[@type='password']");
+
         //Wait for the email input to load
         waitForElement(emailInput).isDisplayed();
 
@@ -32,6 +37,7 @@ public class YouTubeLoginPage extends BasePage {
     }
 
     public boolean isIncorrectPasswordLabelVisible() {
+        By incorrectPasswordLabel = By.xpath("//span[text()='Wrong password. Try again or click Forgot password to reset it.']");
         try {
             //If the element is present, return true
             waitForElement(incorrectPasswordLabel).isDisplayed();
