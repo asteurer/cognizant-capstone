@@ -6,9 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class YouTubeSearchResultsPage extends BasePage {
-
-    //TODO: Test search bar locator to ensure this won't return several items
-
     public YouTubeSearchResultsPage(WebDriver driver) {
         super(driver);
     }
@@ -16,7 +13,7 @@ public class YouTubeSearchResultsPage extends BasePage {
     /**
      * Searches Youtube from the main menu with the specified string
      *
-     * @param toSearch
+     * @param toSearch The string that is used in the search bar
      */
     public YouTubeSearchResultsPage search(String toSearch) {
         WebElement searchBar = super.waitForElement(By.name("search_query"));
@@ -33,14 +30,12 @@ public class YouTubeSearchResultsPage extends BasePage {
      * Clicks on a video with the full title as listed below. Throws a NoSuchElementException when no matching video is
      * found.
      *
-     * @param link
+     * @param link The link to the YouTube video
      * @return YouTubeVideoPage
      * @throws NoSuchElementException
      */
     public YouTubeVideoPage clickLink(WebElement link) {
         link.click();
-
-        //TODO: Test the exception throwing of this class
 
         return new YouTubeVideoPage(driver);
     }
@@ -48,8 +43,8 @@ public class YouTubeSearchResultsPage extends BasePage {
     /**
      * Finds the video link on the page based on the full title
      *
-     * @param fullTitle
-     * @return
+     * @param fullTitle The full title of the YouTube video
+     * @return WebElement
      */
     public WebElement findVideoLink(String fullTitle) {
         String xpath = String.format(
