@@ -6,28 +6,24 @@ import org.openqa.selenium.WebDriver;
 
 public class YouTubeLoginPage extends BasePage {
 
+    private By emailInput = By.xpath("//input[@type='email']");
+    private By nextButton = By.xpath("//span[text()='Next']");
+    private By passwordInput = By.xpath("//input[@type='password']");
 
     public YouTubeLoginPage(WebDriver driver) {
         super(driver);
     }
 
-    /**
-     * Logs in to a Google account
-     * @param username The username to use to log in
-     * @param password The password to use to log in
-     */
-    public void login(String username, String password) {
-        By emailInput = By.xpath("//input[@type='email']");
-        By nextButton = By.xpath("//span[text()='Next']");
-        By passwordInput = By.xpath("//input[@type='password']");
-
+    public void enterEmail(String email) {
         //Wait for the email input to load
         waitForElement(emailInput).isDisplayed();
 
-        driver.findElement(emailInput).sendKeys(username);
+        driver.findElement(emailInput).sendKeys(email);
 
         driver.findElement(nextButton).click();
+    }
 
+    public void enterPassword(String password) {
         //Wait for the password input to load
         waitForElement(passwordInput).isDisplayed();
 
@@ -36,11 +32,41 @@ public class YouTubeLoginPage extends BasePage {
         driver.findElement(nextButton).click();
     }
 
+    public void login(String email, String password) {
+        enterEmail(email);
+
+        enterPassword(password);
+    }
+
     public boolean isIncorrectPasswordLabelVisible() {
         By incorrectPasswordLabel = By.xpath("//span[text()='Wrong password. Try again or click Forgot password to reset it.']");
         try {
             //If the element is present, return true
             waitForElement(incorrectPasswordLabel).isDisplayed();
+            return true;
+        } catch(TimeoutException e) {
+            //If the element is not present and we timed out, return false
+            return false;
+        }
+    }
+
+    public boolean isIncorrectEmailLabelVisible() {
+        By incorrectEmailLabel = By.xpath("//div[text()='Enter a valid email or phone number']");
+        try {
+            //If the element is present, return true
+            waitForElement(incorrectEmailLabel).isDisplayed();
+            return true;
+        } catch(TimeoutException e) {
+            //If the element is not present and we timed out, return false
+            return false;
+        }
+    }
+
+    public boolean isNoAccountLabelVisible() {
+        By noAccountLabel = By.xpath("//div[text()='Couldn’t find your Google Account']");
+        try {
+            //If the element is present, return true
+            waitForElement(noAccountLabel).isDisplayed();
             return true;
         } catch(TimeoutException e) {
             //If the element is not present and we timed out, return false
