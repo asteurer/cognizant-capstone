@@ -8,8 +8,8 @@ import org.junit.Assert;
 
 public class LoginStepdefs extends CoreStepdefs {
 
-    @When("I sign in with username {word} and password {word}")
-    public void i_sign_in(String username, String password) {
+    @When("I sign in with email {word} and password {word}")
+    public void i_sign_in(String email, String password) {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
 
         logger.info("Opening the settings menu");
@@ -20,7 +20,22 @@ public class LoginStepdefs extends CoreStepdefs {
         YouTubeLoginPage loginPage = new YouTubeLoginPage(driver);
 
         logger.info("Attempting to log in with given credentials");
-        loginPage.login(username, password);
+        loginPage.login(email, password);
+    }
+
+    @When("I sign in with email {word}")
+    public void i_sign_in(String email) {
+        YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
+
+        logger.info("Opening the settings menu");
+        videoPage.clickSettingsMenu();
+
+        logger.info("Clicking on login link");
+        videoPage.clickSignInButton();
+        YouTubeLoginPage loginPage = new YouTubeLoginPage(driver);
+
+        logger.info("Attempting to log in with given credentials");
+        loginPage.enterEmail(email);
     }
 
     @Then("I should be signed in")
@@ -37,5 +52,21 @@ public class LoginStepdefs extends CoreStepdefs {
 
         logger.info("Verify that the password error message is present");
         Assert.assertTrue(loginPage.isIncorrectPasswordLabelVisible());
+    }
+
+    @Then("I should receive an account warning")
+    public void iShouldReceiveAnAccountWarning() {
+        YouTubeLoginPage loginPage = new YouTubeLoginPage(driver);
+
+        logger.info("Verify that the account error message is present");
+        Assert.assertTrue(loginPage.isNoAccountLabelVisible());
+    }
+
+    @Then("I should receive an email warning")
+    public void iShouldReceiveAnEmailWarning() {
+        YouTubeLoginPage loginPage = new YouTubeLoginPage(driver);
+
+        logger.info("Verify that the email error message is present");
+        Assert.assertTrue(loginPage.isIncorrectEmailLabelVisible());
     }
 }
