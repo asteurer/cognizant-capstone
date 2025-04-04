@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging.">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_12_07_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_12_07_PM__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_1_37_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_24_2025_1_37_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="0e63378d-26e5-4452-a7d3-b0b341732e54" name="Changes" comment="Code functionality is working for this section.">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_3_27_2025_1_26_PM_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/RunCucumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/examples/cucumber/RunCucumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/RunCucumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/examples/cucumber/RunCucumberTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +50,8 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cucumber Java.Feature: PositiveVideoTests.executor": "Run",
+    "Cucumber Java.Scenario: Comparing Embed Video HTML Code.executor": "Run",
     "JUnit.RunCucumberTest.testVideoPage.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "TestNG.RunCucumberTest.testVideoPage.executor": "Run",
@@ -63,6 +61,45 @@
   }
 }]]></component>
   <component name="RunManager" selected="TestNG.RunCucumberTest.testVideoPage">
+    <configuration name="Feature: PositiveVideoTests" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" />
+      <option name="GLUE" value="com.examples.cucumber" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="cognizant-capstone" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
+      <option name="SUGGESTED_NAME" value="Feature: PositiveVideoTests" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Comparing Embed Video HTML Code" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/features/PositiveVideoTests.feature" />
+      <option name="GLUE" value="com.examples.cucumber" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="cognizant-capstone" />
+      <option name="NAME_FILTER" value="^Comparing Embed Video HTML Code$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Comparing Embed Video HTML Code$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Comparing Embed Video HTML Code" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RunCucumberTest.testVideoPage" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="cognizant-capstone" />
       <extension name="coverage">
@@ -101,6 +138,8 @@
       <list>
         <item itemvalue="TestNG.RunCucumberTest.testVideoPage" />
         <item itemvalue="JUnit.RunCucumberTest.testVideoPage" />
+        <item itemvalue="Cucumber Java.Feature: PositiveVideoTests" />
+        <item itemvalue="Cucumber Java.Scenario: Comparing Embed Video HTML Code" />
       </list>
     </recent_temporary>
   </component>
@@ -129,12 +168,21 @@
       <option name="project" value="LOCAL" />
       <updated>1743453775057</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Code functionality is working for this section.">
+      <option name="closed" value="true" />
+      <created>1743610464599</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1743610464599</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created Carson Branch with current code" />
     <MESSAGE value="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging." />
-    <option name="LAST_COMMIT_MESSAGE" value="Code functionality is working for this section. Last thing to do is substring the comparison between iframes and possibly then more code might be needed during merging." />
+    <MESSAGE value="Code functionality is working for this section." />
+    <option name="LAST_COMMIT_MESSAGE" value="Code functionality is working for this section." />
   </component>
 </project>

@@ -26,8 +26,8 @@ import java.util.logging.Logger;
 
 public class RunCucumberTest {
 
-    private WebDriver driver;
-    private Logger logger;
+    protected static WebDriver driver;
+    protected static Logger logger;
 
     @BeforeMethod(alwaysRun = true)
     @Parameters("browser")
@@ -62,7 +62,7 @@ public class RunCucumberTest {
 //        logger.info("Clicking Embed");
 //        videoPage.clickEmbed(driver);
 //        logger.info("Comparing Embed Video Code");
-//        //Assert.assertEquals("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lC0jzd8sGIA?si=lAZ57pi1NmisWylG\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>", videoPage.getEmbedText(driver));
+//        Assert.assertEquals("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lC0jzd8sGI", videoPage.getEmbedText(driver).substring(0, 78));
 //        logger.info("Closing Share Popup");
 //        videoPage.exitShare(driver);
 //
@@ -73,7 +73,7 @@ public class RunCucumberTest {
 //        videoPage.clickSortBy(driver);
 //        Thread.sleep(2000);
 //        videoPage.clickByNewest(driver);
-//    }
+ //   }
 
     @Given("I am on the correct YouTube video page")
     public void correctYoutubePage() throws InterruptedException {
@@ -103,7 +103,7 @@ public class RunCucumberTest {
     @Given("I am on the embed YouTube video Page")
     public void checkForEmbedPage(){
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
-        Assert.assertEquals("https://www.youtube.com/watch?v=lC0jzd8sGIA", videoPage.getCurrentUrl());
+        Assert.assertEquals("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lC0jzd8sGI", videoPage.getEmbedText(driver).substring(0, 78));
     }
     @When("I close the modal to get back to the main video page")
     public void closeSharePage(){
