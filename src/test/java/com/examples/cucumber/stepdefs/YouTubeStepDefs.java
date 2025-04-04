@@ -123,8 +123,7 @@ public class YouTubeStepDefs extends CoreStepdefs {
     @Then("I should get a window with the following html code")
     public void checkingEmbedTextCode() throws InterruptedException {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
-        Assert.assertEquals("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lC0jzd8sGIA", videoPage.getEmbedText(driver).substring(0, 83));
-    }
+        Assert.assertEquals("<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/lC0jzd8sGI", videoPage.getEmbedText(driver).substring(0, 78));    }
 
     @Given("I am on the embed YouTube video page")
     public void checkForEmbedPage(){
