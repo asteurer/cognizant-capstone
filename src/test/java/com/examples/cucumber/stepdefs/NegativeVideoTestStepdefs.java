@@ -8,34 +8,6 @@ import org.junit.Assert;
 
 public class NegativeVideoTestStepdefs extends CoreStepdefs {
 
-    /**
-     * Setup function for our browser and logger. Note that depending on the setup of our Cucumber tests, it may be
-     * easiest to use this without annotations.
-     *
-     * @param browser
-     *
-    @BeforeClass(alwaysRun = true)
-    @Parameters("browser")
-    public void setup(@Optional("chrome") String browser) {
-
-        logger = Logger.getLogger(YouTubeVideoPage.class.getName());
-        logger.setLevel(Level.INFO);
-
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--disable-blink-features=AutomationControlled");
-
-        switch (browser.toLowerCase()) {
-            case "chrome":
-                logger.info("Testing with " + browser + " browser");
-                driver = new ChromeDriver(chromeOptions);
-                break;
-            default:
-                logger.warning("Configuration missing for browser \"" + browser + "\", defaulting to Chrome.");
-                driver = new ChromeDriver();
-                break;
-        }
-    }*/
-
     @Given("I am on a YouTube video page in the {word} browser")
     public void on_youtube_video_page(String browser) {
         super.setUp(browser);
@@ -51,7 +23,6 @@ public class NegativeVideoTestStepdefs extends CoreStepdefs {
     public void not_signed_in() {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
 
-        //TODO: This section is flawed; will make us wait 10 sec each time if we are signed in
         logger.info("Ensure that Sign In button is visible in top right");
         if(!videoPage.isSignInButtonVisible()) {
             logger.info("Sign In button is not visible; logging out");
