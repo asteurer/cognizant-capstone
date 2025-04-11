@@ -12,9 +12,6 @@ public class LoginStepdefs extends CoreStepdefs {
     public void i_sign_in(String email, String password) {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
 
-        logger.info("Opening the settings menu");
-        videoPage.clickSettingsMenu();
-
         logger.info("Clicking on login link");
         videoPage.clickSignInButton();
         YouTubeLoginPage loginPage = new YouTubeLoginPage(driver);
@@ -26,9 +23,6 @@ public class LoginStepdefs extends CoreStepdefs {
     @When("I sign in with email {word}")
     public void i_sign_in(String email) {
         YouTubeVideoPage videoPage = new YouTubeVideoPage(driver);
-
-        logger.info("Opening the settings menu");
-        videoPage.clickSettingsMenu();
 
         logger.info("Clicking on login link");
         videoPage.clickSignInButton();
