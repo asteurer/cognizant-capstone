@@ -7,22 +7,29 @@ Feature: Login Testing
     Then I should be signed in
 
   @Negative
-  Scenario: Testing Incorrect Password Login
+  Scenario Outline: Login Incorrect Password Testing
     Given I am on a YouTube video page in the Chrome browser
     And I am not signed in
-    When I sign in with email ...@gmail.com and password abcdefg
-    Then I should receive a password warning
+    When I sign in with email <email> and password <password>
+    Then I should receive a <warning type>
+    Examples:
+      | email | password | warning type |
+      | ...@gmail.com | "           | password warning |
+      | ...@gmail.com | abcdefg     | password warning |
+      | ...@gmail.com | 1234567890  | password warning |
 
   @Negative
-  Scenario: Testing Incorrect Email Login
+  Scenario Outline: Login Incorrect Email Testing
     Given I am on a YouTube video page in the Chrome browser
     And I am not signed in
-    When I sign in with email $x%v!q845o1n@yahoo.com
-    Then I should receive an account warning
-
-  @Negative
-  Scenario: Testing Non-Email Login
-    Given I am on a YouTube video page in the Chrome browser
-    And I am not signed in
-    When I sign in with email abcdefg@4e3r8voqnkd5djzg6iv910
-    Then I should receive an email warning
+    When I sign in with email <email>
+    Then I should receive an <warning type>
+    Examples:
+      | email | warning type |
+      | a                               | account warning |
+      | $x%v!q845o1n@yahoo.com          | account warning |
+      | test123456@yahoo.abcdefg        | account warning |
+      | @2                              | email warning   |
+      | abcdefg@4e3r8voqnkd5djzg6iv910  | email warning   |
+      | ??????????@!!!!!!!!!!!!!!!.com  | email warning   |
+      | ???????@yahoo.!!!               | email warning   |
